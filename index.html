@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mald Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function generate() {
+            let wordArray = ["L", "ratio", "cope", "seethe", "you fell off", "don't care", "cringe", "go touch grass", "get good", "maidenless", "who asked", "skill issue", "grammar issue", "stfu", "no lifer", "deal with it", "sus", "blocked", "stay mad", "ez", "get real", "get a life", "typo", "mald", "incorrect", "no bitches", "not based", "your mom likes morbius", "cry about it", "nerd", "full time discord mod"];
+            let output = document.getElementById("output"), input = document.getElementById("input");
+            output.innerHTML = "";
+            for (let i = 0; i < input.value; i++) {
+                let random = Math.floor(Math.random() * wordArray.length);
+                let choice = wordArray.splice(random, 1);
+                if (output.innerHTML.length != 0)
+                    output.innerHTML += " + ";
+                output.innerHTML += choice;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="center">
+        <label for="words">Word count:</label>
+        <br>
+        <input id="input" type="number" name="words">
+        <br><br>
+        <button onclick="generate()">Generate</button>
+        <br><br>
+        <label>Output:</label>
+        <br>
+        <label id="output" style="color:rgb(170, 170, 170);">N/A</label>
+    </div>
+</body>
+</html>
